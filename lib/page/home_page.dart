@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
     decoration: BoxDecoration(
-      gradient: FlutterGradients.loveKiss(type: GradientType.linear,
-          tileMode:TileMode.clamp),),
-      //FlutterGradients.spaceShift(type: GradientType.linear),),
+      gradient: FlutterGradients.overSun(type: GradientType.linear),),
+      //FlutterGradients.spaceShift(type: GradientType.linear),,
+      //           tileMode:TileMode.clamp),),
     child:Scaffold(
       backgroundColor: Colors.transparent,
       body: ChangeNotifierProvider(
