@@ -7,11 +7,11 @@ class SignUpWidget extends StatelessWidget {
   Widget build(BuildContext context) => Stack(
     fit: StackFit.expand,
     children: [
-      buildSignUp(),
+      buildSignUp(context),
     ],
   );
 
-  Widget buildSignUp() => Column(
+  Widget buildSignUp(context) => Column(
     children: [
       Spacer(),
       Align(
@@ -37,6 +37,12 @@ class SignUpWidget extends StatelessWidget {
         style: TextStyle(fontSize: 16),
       ),
       Spacer(),
+      // ElevatedButton(
+      //   onPressed: (){
+      //     Navigator.pushReplacementNamed(context, '/createpoll');
+      //   },
+      //   child: Text("Create poll")
+      // )
     ],
   );
 }

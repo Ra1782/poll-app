@@ -42,6 +42,12 @@ class LoggedInWidget extends StatelessWidget {
               provider.logout();
             },
             child: Text('Logout'),
+          ),
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/createpoll');
+            },
+            child: Text("Create poll")
           )
         ],
       ),
