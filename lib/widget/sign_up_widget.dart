@@ -20,7 +20,7 @@ class SignUpWidget extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 20),
           width: 175,
           child: Text(
-            'Welcome Back To MyApp',
+            'Welcome Back To Polling App',
             style: TextStyle(
               color: Colors.black,
               fontSize: 30,
@@ -31,7 +31,7 @@ class SignUpWidget extends StatelessWidget {
       ),
       Spacer(),
       GoogleSignupButtonWidget(),
-      SizedBox(height: 12),
+      SizedBox(height: 5),
       Text(
         'Login to continue',
         style: TextStyle(fontSize: 16),
