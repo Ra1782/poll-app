@@ -9,13 +9,13 @@ class GoogleSignupButtonWidget extends StatelessWidget {
     padding: EdgeInsets.all(4),
     child: OutlineButton.icon(
       label: Text(
-        'Sign In With Google',
+        'Sign in with Google',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
       ),
       shape: StadiumBorder(),
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       highlightedBorderColor: Colors.black,
-      borderSide: BorderSide(color: Colors.black),
+      borderSide: BorderSide(color: Colors.black,width: 2),
       textColor: Colors.black,
       icon: FaIcon(FontAwesomeIcons.google,color: Colors.pink),
       onPressed: () {
