@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PollCreateQuestion extends StatefulWidget {
-  var formData = {};
+  Map<String, dynamic> formData = {};
   PollCreateQuestion({ Key? key}) : super(key: key);
 
   @override
@@ -62,14 +63,21 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
      });
   }
 
-  dynamic setData(data) async{
-    final prefs = await SharedPreferences.getInstance();
-    var pollList = prefs.getStringList('newPoll');
-    data = jsonEncode(data);
-    pollList!.add(data);
-    print("data: "+ data);
-    prefs.setStringList('newPoll', pollList);
-  }
+  // dynamic setData(data) async{
+  //   final prefs = await SharedPreferences.getInstance();
+  //   var pollList = prefs.getStringList('newPoll');
+  //   data = jsonEncode(data);
+  //   pollList!.add(data);
+  //   print("data: "+ data);
+  //   prefs.setStringList('newPoll', pollList);
+  // }
+
+Future<void> pollSetUp(dynamic data) async {
+  CollectionReference polls = FirebaseFirestore.instance.collection('Polls');
+  polls.add(data);
+  print(data);
+  return;
+}
 
   @override
   Widget build(BuildContext context) {
@@ -135,9 +143,11 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
                                   "noOfUsers": 0
                                 };
                                 print(widget.formData);
-                                setData(widget.formData);
+                                // setData(widget.formData);
+                                pollSetUp(widget.formData);
+                                Navigator.pushNamed(context, '/home');
                              }, 
-                              child: Text("Save"),
+                              child: Text("Create"),
                             ),
                         ],
                       ),

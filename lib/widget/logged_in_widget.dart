@@ -14,11 +14,11 @@ class LoggedInWidget extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Polling | Home"),
-          //backgroundColor: Colors.blueAccent,
-          // flexibleSpace: Image(
-          //   image: AssetImage('assets/images/image.jpg'),
-          //   fit: BoxFit.cover,
-          // ),
+          backgroundColor: Colors.blueAccent,
+          flexibleSpace: Image(
+            image: AssetImage('assets/images/image.jpg'),
+            fit: BoxFit.cover,
+          ),
           centerTitle: true,
           brightness: Brightness.dark,
 
@@ -66,10 +66,10 @@ class LoggedInWidget extends StatelessWidget {
             ],
           ),
           decoration: BoxDecoration(
-            // image: DecorationImage(
-            //   image: AssetImage('assets/images/image.jpg'),
-            //   fit: BoxFit.cover,
-            // ),
+            image: DecorationImage(
+              image: AssetImage('assets/images/image.jpg'),
+              fit: BoxFit.cover,
+            ),
         ),
         ),
 
@@ -101,11 +101,11 @@ class LoggedInWidget extends StatelessWidget {
             ],),),
         body: Container(
           decoration: BoxDecoration(
-            //gradient: FlutterGradients.saintPetersburg(type: GradientType.linear,tileMode:TileMode.decal),
-            // image: new DecorationImage(
-            //   image: new ExactAssetImage('assets/images/bg3.jpg'),
-            //   fit: BoxFit.cover,
-            // ),
+            gradient: FlutterGradients.saintPetersburg(type: GradientType.linear,tileMode:TileMode.decal),
+            image: new DecorationImage(
+              image: new ExactAssetImage('assets/images/bg3.jpg'),
+              fit: BoxFit.cover,
+            ),
 
           ),
 
@@ -128,12 +128,12 @@ class LoggedInWidget extends StatelessWidget {
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    // image: DecorationImage(
-                    //   fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
-                    //   image: AssetImage(
-                    //     'assets/images/image7.jpg',
-                    //   ),
-                    // ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
+                      image: AssetImage(
+                        'assets/images/image7.jpg',
+                      ),
+                    ),
                   ),
                  child: Column(
                    mainAxisSize: MainAxisSize.min,
@@ -177,12 +177,12 @@ class LoggedInWidget extends StatelessWidget {
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    // image: DecorationImage(
-                    //   fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
-                    //   image: AssetImage(
-                    //     'assets/images/image3.jpg',
-                    //   ),
-                    // ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
+                      image: AssetImage(
+                        'assets/images/image3.jpg',
+                      ),
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -226,13 +226,13 @@ class LoggedInWidget extends StatelessWidget {
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    // image: DecorationImage(
-                    //   //colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.dstATop),
-                    //   fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
-                    //   image: AssetImage(
-                    //     'assets/images/image4.jpg',
-                    //   ),
-                    // ),
+                    image: DecorationImage(
+                      //colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.dstATop),
+                      fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
+                      image: AssetImage(
+                        'assets/images/image4.jpg',
+                      ),
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -281,12 +281,12 @@ class LoggedInWidget extends StatelessWidget {
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    // image: DecorationImage(
-                    //   fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
-                    //   image: AssetImage(
-                    //     'assets/images/image14.jpg',
-                    //   ),
-                    // ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
+                      image: AssetImage(
+                        'assets/images/image14.jpg',
+                      ),
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -309,7 +309,9 @@ class LoggedInWidget extends StatelessWidget {
 
                             color: Colors.transparent,
 
-                            onPressed: () {/* ... */},
+                            onPressed: () {
+                              Navigator.pushNamed(context, "/createPoll");
+                            },
                           ),
                         ],
                       ),
@@ -328,12 +330,12 @@ class LoggedInWidget extends StatelessWidget {
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    // image: DecorationImage(
-                    //   fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
-                    //   image: AssetImage(
-                    //     'assets/images/image11.jpg',
-                    //   ),
-                    // ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
+                      image: AssetImage(
+                        'assets/images/image11.jpg',
+                      ),
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -377,13 +379,13 @@ class LoggedInWidget extends StatelessWidget {
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    // image: DecorationImage(
-                    //   //colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.dstATop),
-                    //   fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
-                    //   image: AssetImage(
-                    //     'assets/images/image17.jpg',
-                    //   ),
-                    // ),
+                    image: DecorationImage(
+                      //colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.dstATop),
+                      fit: BoxFit.cover,  //I assumed you want to occupy the entire space of the card
+                      image: AssetImage(
+                        'assets/images/image17.jpg',
+                      ),
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
