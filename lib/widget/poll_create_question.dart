@@ -1,9 +1,10 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PollCreateQuestion extends StatefulWidget {
-  var formData;
-  PollCreateQuestion(Map map, { Key? key , this.formData}) : super(key: key);
+  var formData = {};
+  PollCreateQuestion({ Key? key}) : super(key: key);
 
   @override
   PollCreateQuestionState createState() => PollCreateQuestionState();
@@ -40,12 +41,6 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
       ),
     ];
 
-  Future<void> pollSetUp(dynamic data) async {
-    CollectionReference polls = FirebaseFirestore.instance.collection('Polls');
-    polls.add(data);
-    return;
-  }
-
   addOption(){
      setState(() {
        _optionWidgetList.add(
@@ -67,8 +62,13 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
      });
   }
 
-  dynamic get(){
-    return widget.formData;
+  dynamic setData(data) async{
+    final prefs = await SharedPreferences.getInstance();
+    var pollList = prefs.getStringList('newPoll');
+    data = jsonEncode(data);
+    pollList!.add(data);
+    print("data: "+ data);
+    prefs.setStringList('newPoll', pollList);
   }
 
   @override
@@ -82,19 +82,6 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
                     key: _formKey,
                     child: Column(
                       children: <Widget>[
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     Text("Poll Id: "),
-                        //     Text(
-                        //       generateRandomString(),
-                        //       style: TextStyle(
-                        //         backgroundColor: Colors.grey[300],
-                        //       )
-                        //     )
-                        //   ],
-                        // ),
-                        // SizedBox(height: 8),
                         TextFormField(
                           decoration: InputDecoration(hintText: "Poll Question"),
                           validator: (value) {
@@ -135,7 +122,6 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 50,),
                         ElevatedButton(
                               onPressed: (){
                                 if(!_formKey.currentState!.validate()){
@@ -149,15 +135,9 @@ class PollCreateQuestionState extends State<PollCreateQuestion> {
                                   "noOfUsers": 0
                                 };
                                 print(widget.formData);
-                                try{
-                                  pollSetUp(widget.formData);
-                                }
-                                catch(e){
-                                  print(e);
-                                }
-                                Navigator.pushNamed(context, '/home'); 
-                              }, 
-                              child: Text("Create"),
+                                setData(widget.formData);
+                             }, 
+                              child: Text("Save"),
                             ),
                         ],
                       ),

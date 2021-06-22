@@ -10,11 +10,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
       decoration: BoxDecoration(
-        //gradient: FlutterGradients.saintPetersburg(type: GradientType.linear,tileMode:TileMode.decal),
-        image: new DecorationImage(
-          image: new ExactAssetImage('assets/images/bg3.jpg'),
-          fit: BoxFit.cover,
-        ),),
+        gradient: FlutterGradients.saintPetersburg(type: GradientType.linear,tileMode:TileMode.decal),
+        // image: new DecorationImage(
+        //   image: new ExactAssetImage('assets/images/bg3.jpg'),
+        //   fit: BoxFit.cover,
+        // ),
+        ),
       //FlutterGradients.spaceShift(type: GradientType.linear),,
       //           tileMode:TileMode.clamp),),
     child:Scaffold(
